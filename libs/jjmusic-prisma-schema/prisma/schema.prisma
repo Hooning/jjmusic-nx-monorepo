@@ -1,0 +1,132 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../../../node_modules/@prisma/client/jjmusic-db-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email      String     @unique
+  password   String
+  role       Role       @default(STUDENT)
+  purchases  Purchase[]
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  @@index([email])
+}
+
+model Lesson {
+  id          String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  description String
+  videoUrl    String
+  prices      Price[]
+  purchases   Purchase[]
+  categories  CategoryOnLesson[]
+  level       String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([title])
+}
+
+model SheetMusic {
+  id          String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String
+  description String
+  fileUrl     String
+  prices      Price[]
+  purchases   Purchase[]
+  categories  CategoryOnSheetMusic[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([title])
+}
+
+model Price {
+  id           String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  amount       Decimal     @db.Decimal(10, 2)
+  currency     String      @default("KRW")
+  isDefault    Boolean     @default(false)
+  
+  lessonId     String?     @db.Uuid
+  sheetMusicId String?     @db.Uuid
+  lesson       Lesson?     @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  sheetMusic   SheetMusic? @relation(fields: [sheetMusicId], references: [id], onDelete: Cascade)
+
+  @@unique([lessonId, currency])
+  @@unique([sheetMusicId, currency])
+  @@index([currency])
+}
+
+model Category {
+  id          String               @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String               @unique
+  lessons     CategoryOnLesson[]
+  sheetMusics CategoryOnSheetMusic[]
+  createdAt   DateTime             @default(now())
+  updatedAt   DateTime             @updatedAt
+
+  @@index([name])
+}
+
+model CategoryOnLesson {
+  lessonId    String     @db.Uuid
+  categoryId  String     @db.Uuid
+  lesson      Lesson     @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  category    Category   @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  assignedAt  DateTime   @default(now())
+
+  @@id([lessonId, categoryId])
+  @@index([categoryId])
+  @@index([lessonId])
+}
+
+model CategoryOnSheetMusic {
+  sheetMusicId String     @db.Uuid
+  categoryId   String     @db.Uuid
+  sheetMusic   SheetMusic @relation(fields: [sheetMusicId], references: [id], onDelete: Cascade)
+  category     Category   @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  assignedAt   DateTime   @default(now())
+
+  @@id([sheetMusicId, categoryId])
+  @@index([categoryId])
+  @@index([sheetMusicId])
+}
+
+model Purchase {
+  id         String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId     String      @db.Uuid
+  lessonId   String?     @db.Uuid
+  sheetId    String?     @db.Uuid
+  amount     Decimal     @db.Decimal(10, 2)
+  currency   String      @default("KRW")
+  status     Status      @default(PENDING)
+  user       User        @relation(fields: [userId], references: [id])
+  lesson     Lesson?     @relation(fields: [lessonId], references: [id])
+  sheet      SheetMusic? @relation(fields: [sheetId], references: [id])
+  createdAt  DateTime    @default(now())
+  
+  @@index([userId])
+  @@index([lessonId])
+  @@index([sheetId])
+  @@index([status])
+}
+
+enum Role {
+  ADMIN
+  INSTRUCTOR
+  STUDENT
+}
+
+enum Status {
+  PENDING
+  COMPLETED
+  FAILED
+}
