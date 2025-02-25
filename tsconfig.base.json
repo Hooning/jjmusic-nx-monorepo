@@ -15,8 +15,26 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jjmusic-nx-monorepo/jjmusic-prisma-schema": [
+      "@jjmusic-nx-monorepo/api/configuration/jjmusic-prisma-schema": [
         "libs/api/configuration/jjmusic-prisma-schema/src/index.ts"
+      ],
+      "@jjmusic-nx-monorepo/api/domain/auth": [
+        "libs/api/domain/auth/src/index.ts"
+      ],
+      "@jjmusic-nx-monorepo/api/domain/categories": [
+        "libs/api/domain/categories/src/index.ts"
+      ],
+      "@jjmusic-nx-monorepo/api/domain/lessons": [
+        "libs/api/domain/lessons/src/index.ts"
+      ],
+      "@jjmusic-nx-monorepo/api/domain/purchases": [
+        "libs/api/domain/purchases/src/index.ts"
+      ],
+      "@jjmusic-nx-monorepo/api/domain/sheet-music": [
+        "libs/api/domain/sheet-music/src/index.ts"
+      ],
+      "@jjmusic-nx-monorepo/api/domain/users": [
+        "libs/api/domain/users/src/index.ts"
       ]
     }
   },
