@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "start:api": "nx serve jjmusic-api",
-    "start:web": "nx serve jjmusic-client"
+    "start:web": "nx serve jjmusic-client",
+    "gen:api-client": "ng-openapi-gen --config ng-openapi-gen.json",
+    "gen:api": "npm run start:api && npm run gen:api-client"
   },
   "private": true,
   "dependencies": {

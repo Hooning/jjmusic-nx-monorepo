@@ -1,0 +1,15 @@
+{
+  "input": "./openapi.json",
+  "output": "libs/jjmusic-client/shared/src/lib/api",
+  "ignoreUnusedModels": false,
+  "templates": "./api-templates",
+  "skipJsonSuffix": true,
+  "includeTags": [],
+  "excludeTags": [],
+  "servicePrefix": "Api",
+  "serviceSuffix": "Service",
+  "modelPrefix": "",
+  "modelSuffix": "",
+  "enumPrefix": "",
+  "enumSuffix": "Enum"
+}
