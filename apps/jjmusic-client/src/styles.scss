@@ -1,5 +1,126 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Import PrimeNG resources */
+@import 'primeicons/primeicons.css';
+
+/* Import Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
+/* Custom color variables */
+:root {
+  --color-piano-blue: #1a2a4a;
+  --color-secondary-blue: #0f3460;
+  --color-piano-gold: #d4af37;
+  --color-piano-burgundy: #7e354d;
+  --color-piano-offwhite: #f5f5f5;
+  --color-piano-charcoal: #333333;
+  --color-piano-teal: #008080;
+  --color-footer-dark: #14213d;
+  --color-footer-light: #e5e5e5;
+}
+
+// Base styles
+body {
+  font-family: var(--font-family);
+  color: var(--color-piano-charcoal);
+  background-color: var(--color-piano-offwhite);
+  line-height: 1.6;
+}
+
+// Heading styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-piano-offwhite);
+  font-weight: bold;
+}
+
+// Link styles
+a {
+  color: var(--color-piano-teal);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-piano-burgundy);
+  }
+}
+
+// Button styles
+.p-button {
+  background-color: var(--color-piano-gold);
+  color: var(--color-piano-blue);
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-piano-teal);
+    color: var(--color-piano-offwhite);
+  }
+
+  &.p-button-outlined {
+    background-color: transparent;
+    border: 2px solid var(--color-piano-gold);
+    color: var(--color-piano-gold);
+
+    &:hover {
+      background-color: var(--color-piano-gold);
+      color: var(--color-piano-blue);
+    }
+  }
+}
+
+// Card styles
+.p-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .p-card-title {
+    color: var(--color-piano-blue);
+  }
+
+  .p-card-content {
+    color: var(--color-piano-charcoal);
+  }
+}
+
+// Custom utility classes
+.bg-piano-blue {
+  background-color: var(--color-piano-blue);
+}
+.bg-piano-gold {
+  background-color: var(--color-piano-gold);
+}
+.bg-piano-burgundy {
+  background-color: var(--color-piano-burgundy);
+}
+.bg-piano-offwhite {
+  background-color: var(--color-piano-offwhite);
+}
+.bg-piano-charcoal {
+  background-color: var(--color-piano-charcoal);
+}
+.text-piano-blue {
+  color: var(--color-piano-blue);
+}
+.text-piano-gold {
+  color: var(--color-piano-gold);
+}
+.text-piano-burgundy {
+  color: var(--color-piano-burgundy);
+}
+.text-piano-charcoal {
+  color: var(--color-piano-charcoal);
+}
+.text-piano-offwhite {
+  color: var(--color-piano-offwhite);
+}
+.text-footer-light {
+  color: var(--color-footer-light);
+}

@@ -1,0 +1,61 @@
+// Custom styles for PrimeNG components to match our theme
+:host ::ng-deep {
+  // Custom header menu styles
+  .header-menu {
+    &.p-menubar {
+      background-color: var(--color-piano-blue);
+      border: none;
+
+      p-menubarsub {
+        > .p-menubar-root-list {
+          > .p-menubar-item {
+            > .p-menubar-item-content {
+              > .p-menubar-item-link {
+                color: var(--color-piano-offwhite);
+                transition: color 0.3s ease;
+
+                .p-menubar-item-label,
+                .p-menubar-item-icon {
+                  color: var(--color-piano-offwhite);
+                  transition: color 0.3s ease;
+                }
+
+                &:hover {
+                  background-color: transparent;
+                  .p-menubar-item-label,
+                  .p-menubar-item-icon {
+                    color: var(--color-piano-gold);
+                  }
+                }
+              }
+              > .p-ripple {
+                border-radius: 20px;
+                background-color: transparent;
+                &:hover {
+                  background-color: var(--color-secondary-blue);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Responsive styles
+    @media (max-width: 960px) {
+      &.p-menubar {
+        .p-menubar-button {
+          color: var(--color-piano-offwhite);
+
+          &:hover {
+            color: var(--color-piano-gold);
+          }
+        }
+
+        .p-menubar-root-list {
+          background-color: var(--color-piano-blue);
+        }
+      }
+    }
+  }
+}
