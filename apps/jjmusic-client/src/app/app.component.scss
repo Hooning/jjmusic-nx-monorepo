@@ -1,1 +1,12 @@
+/* Add this to your component's CSS file */
+:host ::ng-deep .p-menubar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
 
+:host ::ng-deep .p-menubar-root-list {
+  margin-left: auto; /* This pushes the menu items to the right */
+  display: flex;
+  gap: 1rem; /* This adds space between menu items */
+}

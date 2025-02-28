@@ -1,17 +1,23 @@
 <div class="flex flex-col min-h-screen">
   <!-- Header -->
   <header class="shadow-md sticky top-0 z-50">
-    <div
-      class="max-w-7xl mx-auto px-4 flex items-center justify-between flex-wrap"
-    >
-      <div class="py-2">
-        <h1 class="text-2xl font-bold m-0">JJ Music</h1>
-      </div>
-      <p-menubar [model]="menuItems"></p-menubar>
-    </div>
+    <p-menubar [model]="menuItems">
+      <ng-template #start>
+        <div class="flex items-center">
+          <img
+            src="https://jjmusic-online.github.io/assets/images/88x88.png"
+            width="45"
+            height="45"
+            class="m-2"
+            alt="JJ Music Logo"
+          />
+          <div class="text-2xl font-bold mb-1 mr-4">JJ Music</div>
+        </div>
+      </ng-template>
+    </p-menubar>
   </header>
 
-  <main class="">
+  <main class="bg-sky-950 text-stone-200">
     <!-- Hero Section -->
     <section class="py-20">
       <div class="container mx-auto px-4">
@@ -30,6 +36,7 @@
               size="large"
               [raised]="true"
               [rounded]="true"
+              severity="success"
             ></p-button>
           </div>
           <div class="md:w-1/2">
@@ -44,7 +51,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-16">
+    <section class="py-16 bg-stone-200 text-sky-900">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">
           Why Choose Our Piano Lessons?
@@ -118,13 +125,13 @@
     </section>
 
     <!-- Testimonial Section -->
-    <section class="py-16">
+    <section class="py-16 bg-amber-50">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">
+        <h2 class="text-3xl font-bold text-center mb-12 text-sky-950">
           What Our Students Say
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="p-6 rounded-lg shadow-md">
+          <div class="p-6 rounded-lg shadow-md bg-sky-700 text-neutral-50">
             <p class="mb-4 italic">
               "These lessons have transformed my playing. I've gone from a
               beginner to confidently jamming with other musicians in just
@@ -132,7 +139,7 @@
             </p>
             <p class="font-semibold">- Sarah J., Hobbyist Pianist</p>
           </div>
-          <div class="p-6 rounded-lg shadow-md">
+          <div class="p-6 rounded-lg shadow-md bg-sky-700 text-neutral-50">
             <p class="mb-4 italic">
               "The instructors are world-class, and the flexibility of online
               learning fits perfectly with my busy schedule. Highly
@@ -168,33 +175,55 @@
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 class="text-xl font-semibold mb-4">About Us</h3>
+          <h3 class="text-xl font-semibold mb-4 text-amber-400">About Us</h3>
           <p class="">
             Your premier destination for online piano lessons. Learn from the
             best, anytime, anywhere.
           </p>
         </div>
         <div>
-          <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+          <h3 class="text-xl font-semibold mb-4 text-amber-400">Quick Links</h3>
           <ul>
             <li>
-              <a href="#" class="transition-colors">Home</a>
+              <a href="#" class="transition-colors hover:text-amber-300"
+                >Home</a
+              >
             </li>
             <li>
-              <a href="#" class="transition-colors">Lessons</a>
+              <a href="#" class="transition-colors hover:text-amber-300"
+                >Lessons</a
+              >
             </li>
             <li>
-              <a href="#" class="transition-colors">Instructors</a>
+              <a href="#" class="transition-colors hover:text-amber-300"
+                >Instructors</a
+              >
             </li>
             <li>
-              <a href="#" class="transition-colors">Contact</a>
+              <a href="#" class="transition-colors hover:text-amber-300"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+          <h3 class="text-xl font-semibold mb-4 text-amber-400">Contact Us</h3>
           <p class="">Email: jazzydus&#64;gmail.com</p>
           <p class="">Phone: +49 (0173) 2014997</p>
+          <div class="mt-4 flex space-x-4">
+            <a href="#" class="text-2xl hover:text-amber-300 transition-colors">
+              <i class="pi pi-facebook"></i>
+            </a>
+            <a href="#" class="text-2xl hover:text-amber-300 transition-colors">
+              <i class="pi pi-twitter"></i>
+            </a>
+            <a href="#" class="text-2xl hover:text-amber-300 transition-colors">
+              <i class="pi pi-instagram"></i>
+            </a>
+            <a href="#" class="text-2xl hover:text-amber-300 transition-colors">
+              <i class="pi pi-youtube"></i>
+            </a>
+          </div>
         </div>
       </div>
       <div class="mt-8 pt-8 border-t">
