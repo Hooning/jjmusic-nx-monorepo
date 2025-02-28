@@ -1,41 +1,43 @@
 <div class="flex flex-col min-h-screen">
   <!-- Header -->
-  <header class="bg-piano-blue text-piano-offwhite shadow-md sticky top-0 z-50">
+  <header class="bg-primary-800 text-slate-50 shadow-md sticky top-0 z-50">
     <div
       class="max-w-7xl mx-auto px-4 flex items-center justify-between flex-wrap"
     >
       <div class="py-2">
         <h1 class="text-2xl font-bold m-0">JJ Music</h1>
       </div>
-      <p-menubar [model]="menuItems" styleClass="header-menu"></p-menubar>
+      <p-menubar [model]="menuItems"></p-menubar>
     </div>
   </header>
 
-  <main class="bg-piano-offwhite text-piano-charcoal">
+  <main class="bg-slate-50 text-slate-800">
     <!-- Hero Section -->
-    <section class="bg-piano-blue text-piano-offwhite py-20">
+    <section class="bg-primary-800 text-slate-50 py-20">
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 mb-10 md:mb-0">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">
-              Master the Piano with Jazz Legends
+              Master the Jazz Piano Skills Online!
             </h1>
             <p class="text-xl mb-6">
               Learn from world-class instructors, anytime, anywhere. Start your
               musical journey today!
             </p>
-            <a
-              href="#"
-              class="bg-piano-gold text-piano-blue font-semibold py-3 px-6 rounded-lg hover:bg-piano-teal hover:text-piano-offwhite transition-colors"
-            >
-              Start Free Trial
-            </a>
+            <p-button
+              label="Watch Demo Lessons"
+              icon="pi pi-video"
+              size="large"
+              [raised]="true"
+              [rounded]="true"
+              severity="success"
+            ></p-button>
           </div>
           <div class="md:w-1/2">
             <img
-              src="/placeholder.svg?height=400&width=600"
+              src="https://soundsmarket.com/blog/wp-content/uploads/2018/12/Piano.png?height=200&width=300"
               alt="Pianist playing jazz"
-              class="rounded-lg shadow-lg"
+              class="rounded-lg shadow-sm p-12"
             />
           </div>
         </div>
@@ -45,20 +47,20 @@
     <!-- Features Section -->
     <section class="py-16">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-piano-blue">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary-600">
           Why Choose Our Piano Lessons?
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="bg-white p-6 rounded-lg shadow-md">
-            <i class="fas fa-music text-4xl text-piano-gold mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2 text-piano-blue">
+            <i class="fas fa-music text-4xl text-amber-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2 text-primary-600">
               Expert Instructors
             </h3>
             <p>Learn from renowned jazz pianists and seasoned educators.</p>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
-            <i class="fas fa-clock text-4xl text-piano-gold mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2 text-piano-blue">
+            <i class="fas fa-clock text-4xl text-amber-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2 text-primary-600">
               Flexible Schedule
             </h3>
             <p>
@@ -66,8 +68,8 @@
             </p>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-md">
-            <i class="fas fa-chart-line text-4xl text-piano-gold mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2 text-piano-blue">
+            <i class="fas fa-chart-line text-4xl text-amber-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2 text-primary-600">
               Track Your Progress
             </h3>
             <p>
@@ -80,49 +82,49 @@
     </section>
 
     <!-- Popular Lessons Section -->
-    <section class="bg-piano-burgundy text-piano-offwhite py-16">
+    <section class="bg-rose-800 text-slate-50 py-16">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Popular Lessons</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white text-piano-charcoal p-6 rounded-lg shadow-md">
+          <div class="bg-white text-slate-800 p-6 rounded-lg shadow-md">
             <img
               src="/placeholder.svg?height=200&width=300"
               alt="Jazz Fundamentals"
               class="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 class="text-xl font-semibold mb-2 text-piano-blue">
+            <h3 class="text-xl font-semibold mb-2 text-primary-600">
               Jazz Fundamentals
             </h3>
             <p class="mb-4">
               Master the basics of jazz piano with our comprehensive course.
             </p>
-            <a href="#" class="text-piano-teal hover:underline">Learn More →</a>
+            <a href="#" class="text-teal-600 hover:underline">Learn More →</a>
           </div>
-          <div class="bg-white text-piano-charcoal p-6 rounded-lg shadow-md">
+          <div class="bg-white text-slate-800 p-6 rounded-lg shadow-md">
             <img
               src="/placeholder.svg?height=200&width=300"
               alt="Improvisation Techniques"
               class="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 class="text-xl font-semibold mb-2 text-piano-blue">
+            <h3 class="text-xl font-semibold mb-2 text-primary-600">
               Improvisation Techniques
             </h3>
             <p class="mb-4">
               Unlock your creativity with advanced improvisation methods.
             </p>
-            <a href="#" class="text-piano-teal hover:underline">Learn More →</a>
+            <a href="#" class="text-teal-600 hover:underline">Learn More →</a>
           </div>
-          <div class="bg-white text-piano-charcoal p-6 rounded-lg shadow-md">
+          <div class="bg-white text-slate-800 p-6 rounded-lg shadow-md">
             <img
               src="/placeholder.svg?height=200&width=300"
               alt="Blues Piano Mastery"
               class="w-full h-40 object-cover rounded-md mb-4"
             />
-            <h3 class="text-xl font-semibold mb-2 text-piano-blue">
+            <h3 class="text-xl font-semibold mb-2 text-primary-600">
               Blues Piano Mastery
             </h3>
             <p class="mb-4">Dive deep into the soulful world of blues piano.</p>
-            <a href="#" class="text-piano-teal hover:underline">Learn More →</a>
+            <a href="#" class="text-teal-600 hover:underline">Learn More →</a>
           </div>
         </div>
       </div>
@@ -131,7 +133,7 @@
     <!-- Testimonial Section -->
     <section class="py-16">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-piano-blue">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary-600">
           What Our Students Say
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -156,7 +158,7 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="bg-piano-blue text-piano-offwhite py-20">
+    <section class="bg-primary-600 text-slate-50 py-20">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl font-bold mb-4">
           Ready to Start Your Jazz Piano Journey?
@@ -166,7 +168,7 @@
         </p>
         <a
           href="#"
-          class="bg-piano-gold text-piano-blue font-semibold py-3 px-6 rounded-lg hover:bg-piano-teal hover:text-piano-offwhite transition-colors inline-block"
+          class="bg-amber-400 text-slate-900 font-semibold py-3 px-6 rounded-lg hover:bg-teal-500 hover:text-slate-50 transition-colors inline-block"
         >
           Get Started Now
         </a>
@@ -175,59 +177,57 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-piano-charcoal text-piano-offwhite py-8">
+  <footer class="bg-slate-900 text-slate-50 py-8">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 class="text-piano-gold text-xl font-semibold mb-4">About Us</h3>
-          <p class="text-piano-offwhite/80">
+          <h3 class="text-amber-400 text-xl font-semibold mb-4">About Us</h3>
+          <p class="text-slate-300">
             Your premier destination for online piano lessons. Learn from the
             best, anytime, anywhere.
           </p>
         </div>
         <div>
-          <h3 class="text-piano-gold text-xl font-semibold mb-4">
-            Quick Links
-          </h3>
+          <h3 class="text-amber-400 text-xl font-semibold mb-4">Quick Links</h3>
           <ul>
             <li>
               <a
                 href="#"
-                class="text-piano-offwhite/80 hover:text-piano-teal transition-colors"
+                class="text-slate-300 hover:text-teal-400 transition-colors"
                 >Home</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="text-piano-offwhite/80 hover:text-piano-teal transition-colors"
+                class="text-slate-300 hover:text-teal-400 transition-colors"
                 >Lessons</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="text-piano-offwhite/80 hover:text-piano-teal transition-colors"
+                class="text-slate-300 hover:text-teal-400 transition-colors"
                 >Instructors</a
               >
             </li>
             <li>
               <a
                 href="#"
-                class="text-piano-offwhite/80 hover:text-piano-teal transition-colors"
+                class="text-slate-300 hover:text-teal-400 transition-colors"
                 >Contact</a
               >
             </li>
           </ul>
         </div>
         <div>
-          <h3 class="text-piano-gold text-xl font-semibold mb-4">Contact Us</h3>
-          <p class="text-piano-offwhite/80">Email: jazzydus&#64;gmail.com</p>
-          <p class="text-piano-offwhite/80">Phone: +49 (0173) 2014997</p>
+          <h3 class="text-amber-400 text-xl font-semibold mb-4">Contact Us</h3>
+          <p class="text-slate-300">Email: jazzydus&#64;gmail.com</p>
+          <p class="text-slate-300">Phone: +49 (0173) 2014997</p>
         </div>
       </div>
       <div
-        class="mt-8 pt-8 border-t border-piano-offwhite/20 text-center text-piano-offwhite/60"
+        class="mt-8 pt-8 border-t border-slate-700 text-center text-slate-400"
       >
         <p>&copy; 2024 JJ Music. All rights reserved.</p>
       </div>

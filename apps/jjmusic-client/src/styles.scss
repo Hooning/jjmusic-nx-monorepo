@@ -1,126 +1,244 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Import PrimeNG resources */
-@import 'primeicons/primeicons.css';
-
-/* Import Tailwind CSS */
+// Import Tailwind directives
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom color variables */
+// Import PrimeNG styles
+@import 'primeicons/primeicons.css';
+
+// Variables based on your theme
 :root {
-  --color-piano-blue: #1a2a4a;
-  --color-secondary-blue: #0f3460;
-  --color-piano-gold: #d4af37;
-  --color-piano-burgundy: #7e354d;
-  --color-piano-offwhite: #f5f5f5;
-  --color-piano-charcoal: #333333;
-  --color-piano-teal: #008080;
-  --color-footer-dark: #14213d;
-  --color-footer-light: #e5e5e5;
+  // Primary colors
+  --primary-50: #f5f8fb;
+  --primary-100: #cddced;
+  --primary-200: #a5c0de;
+  --primary-300: #7da4cf;
+  --primary-400: #5688c1;
+  --primary-500: #2e6cb2;
+  --primary-600: #275c97;
+  --primary-700: #204c7d;
+  --primary-800: #193b62;
+  --primary-900: #122b47;
+  --primary-950: #0c1b2d;
+
+  // Transition durations
+  --transition-duration: 0.2s;
+
+  // Border radius
+  --border-radius-none: 0;
+  --border-radius-xs: 2px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 12px;
+
+  // Focus ring
+  --focus-ring-width: 1px;
+  --focus-ring-style: solid;
+  --focus-ring-color: var(--primary-500);
+  --focus-ring-offset: 2px;
+
+  // Form field
+  --form-field-padding-x: 0.75rem;
+  --form-field-padding-y: 0.5rem;
+  --form-field-border-radius: var(--border-radius-md);
 }
 
-// Base styles
-body {
-  font-family: var(--font-family);
-  color: var(--color-piano-charcoal);
-  background-color: var(--color-piano-offwhite);
-  line-height: 1.6;
+// Light mode (default)
+:root {
+  // Surface colors
+  --surface-0: #ffffff;
+  --surface-50: #f8fafc;
+  --surface-100: #f1f5f9;
+  --surface-200: #e2e8f0;
+  --surface-300: #cbd5e1;
+  --surface-400: #94a3b8;
+  --surface-500: #64748b;
+  --surface-600: #475569;
+  --surface-700: #334155;
+  --surface-800: #1e293b;
+  --surface-900: #0f172a;
+  --surface-950: #020617;
+
+  // Text colors
+  --text-color: var(--surface-700);
+  --text-hover-color: var(--surface-800);
+  --text-muted-color: var(--surface-500);
+  --text-hover-muted-color: var(--surface-600);
+
+  // Form field colors
+  --form-field-bg: var(--surface-0);
+  --form-field-disabled-bg: var(--surface-200);
+  --form-field-filled-bg: var(--surface-50);
+  --form-field-border-color: var(--surface-300);
+  --form-field-hover-border-color: var(--surface-400);
+  --form-field-focus-border-color: var(--primary-500);
+  --form-field-color: var(--surface-700);
+  --form-field-placeholder-color: var(--surface-500);
+
+  // Content colors
+  --content-bg: var(--surface-0);
+  --content-hover-bg: var(--surface-100);
+  --content-border-color: var(--surface-200);
 }
 
-// Heading styles
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-piano-offwhite);
-  font-weight: bold;
+// Dark mode
+.dark-mode {
+  // Surface colors
+  --surface-0: #ffffff;
+  --surface-50: #fafafa;
+  --surface-100: #f4f4f5;
+  --surface-200: #e4e4e7;
+  --surface-300: #d4d4d8;
+  --surface-400: #a1a1aa;
+  --surface-500: #71717a;
+  --surface-600: #52525b;
+  --surface-700: #3f3f46;
+  --surface-800: #27272a;
+  --surface-900: #18181b;
+  --surface-950: #09090b;
+
+  --contrast-200: #fde68a;
+  --contrast-300: #fcd34d;
+  --contrast-400: #fbbf24;
+  --contrast-500: #f59e0b;
+  --contrast-600: #d97706;
+  --contrast-700: #b45309;
+  --contrast-800: #92400e;
+
+  // Primary colors
+  --primary-color: var(--primary-400);
+  --primary-contrast-color: var(--contrast-400);
+  --primary-hover-color: var(--primary-300);
+  --primary-active-color: var(--primary-200);
+
+  // Text colors
+  --text-color: var(--surface-0);
+  --text-hover-color: var(--surface-0);
+  --text-muted-color: var(--surface-400);
+  --text-hover-muted-color: var(--surface-300);
+
+  // Form field colors
+  --form-field-bg: var(--surface-950);
+  --form-field-disabled-bg: var(--surface-700);
+  --form-field-filled-bg: var(--surface-800);
+  --form-field-border-color: var(--surface-600);
+  --form-field-hover-border-color: var(--surface-500);
+  --form-field-focus-border-color: var(--primary-400);
+  --form-field-color: var(--surface-0);
+  --form-field-placeholder-color: var(--surface-400);
+
+  // Content colors
+  --content-bg: var(--surface-900);
+  --content-hover-bg: var(--surface-800);
+  --content-border-color: var(--surface-700);
 }
 
-// Link styles
-a {
-  color: var(--color-piano-teal);
-  text-decoration: none;
-  transition: color 0.3s ease;
+// Custom utility classes
+@layer components {
+  // Form field styles
+  .form-field {
+    background-color: var(--form-field-bg);
+    border-color: var(--form-field-border-color);
+    color: var(--form-field-color);
+    border-radius: var(--form-field-border-radius);
+    padding: var(--form-field-padding-y) var(--form-field-padding-x);
+    transition-duration: var(--transition-duration);
 
-  &:hover {
-    color: var(--color-piano-burgundy);
+    &:hover:not(:disabled) {
+      border-color: var(--form-field-hover-border-color);
+    }
+
+    &:focus:not(:disabled) {
+      border-color: var(--form-field-focus-border-color);
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: var(--form-field-disabled-bg);
+      color: var(--form-field-placeholder-color);
+      opacity: 0.6;
+    }
+
+    &::placeholder {
+      color: var(--form-field-placeholder-color);
+    }
   }
-}
 
-// Button styles
-.p-button {
-  background-color: var(--color-piano-gold);
-  color: var(--color-piano-blue);
-  border: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  &:hover {
-    background-color: var(--color-piano-teal);
-    color: var(--color-piano-offwhite);
-  }
-
-  &.p-button-outlined {
-    background-color: transparent;
-    border: 2px solid var(--color-piano-gold);
-    color: var(--color-piano-gold);
+  // Content styles
+  .content-card {
+    background-color: var(--content-bg);
+    border-color: var(--content-border-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius-md);
+    transition-duration: var(--transition-duration);
 
     &:hover {
-      background-color: var(--color-piano-gold);
-      color: var(--color-piano-blue);
+      background-color: var(--content-hover-bg);
+      color: var(--text-hover-color);
     }
   }
 }
 
-// Card styles
-.p-card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+// PrimeNG component customizations
+:host ::ng-deep {
+  // Button customization
+  .p-button {
+    border-radius: var(--border-radius-md);
+    transition-duration: var(--transition-duration);
 
-  .p-card-title {
-    color: var(--color-piano-blue);
+    &.p-button-primary {
+      background-color: var(--primary-500);
+      color: white;
+
+      &:hover {
+        background-color: var(--primary-600);
+      }
+
+      &:active {
+        background-color: var(--primary-700);
+      }
+    }
+
+    &.p-button-contrast {
+      background-color: var(--contrast-400);
+      color: var(--text-color);
+      border-color: var(--contrast-500);
+
+      &:enabled:hover {
+        background-color: var(--contrast-200);
+        color: var(--text-hover-color);
+        border-color: var(--contrast-300);
+      }
+    }
   }
 
-  .p-card-content {
-    color: var(--color-piano-charcoal);
+  // Input customization
+  .p-inputtext {
+    border-radius: var(--form-field-border-radius);
+    transition-duration: var(--transition-duration);
   }
-}
 
-// Custom utility classes
-.bg-piano-blue {
-  background-color: var(--color-piano-blue);
-}
-.bg-piano-gold {
-  background-color: var(--color-piano-gold);
-}
-.bg-piano-burgundy {
-  background-color: var(--color-piano-burgundy);
-}
-.bg-piano-offwhite {
-  background-color: var(--color-piano-offwhite);
-}
-.bg-piano-charcoal {
-  background-color: var(--color-piano-charcoal);
-}
-.text-piano-blue {
-  color: var(--color-piano-blue);
-}
-.text-piano-gold {
-  color: var(--color-piano-gold);
-}
-.text-piano-burgundy {
-  color: var(--color-piano-burgundy);
-}
-.text-piano-charcoal {
-  color: var(--color-piano-charcoal);
-}
-.text-piano-offwhite {
-  color: var(--color-piano-offwhite);
-}
-.text-footer-light {
-  color: var(--color-footer-light);
+  // Dropdown customization
+  .p-dropdown {
+    border-radius: var(--form-field-border-radius);
+
+    .p-dropdown-panel {
+      border-radius: var(--border-radius-md);
+    }
+  }
+
+  // Dialog customization
+  .p-dialog {
+    border-radius: var(--border-radius-xl);
+
+    .p-dialog-header {
+      border-top-left-radius: var(--border-radius-xl);
+      border-top-right-radius: var(--border-radius-xl);
+    }
+
+    .p-dialog-content {
+      padding: 1.25rem;
+    }
+  }
 }
