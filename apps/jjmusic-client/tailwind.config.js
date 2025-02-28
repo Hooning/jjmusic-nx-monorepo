@@ -19,6 +19,17 @@ module.exports = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
+          50: '#f5f8fb',
+          100: '#cddced',
+          200: '#a5c0de',
+          300: '#7da4cf',
+          400: '#5688c1',
+          500: '#2e6cb2',
+          600: '#275c97',
+          700: '#204c7d',
+          800: '#193b62',
+          900: '#122b47',
+          950: '#0c1b2d',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -44,21 +55,6 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Primary colors
-        primary: {
-          50: '#f5f8fb',
-          100: '#cddced',
-          200: '#a5c0de',
-          300: '#7da4cf',
-          400: '#5688c1',
-          500: '#2e6cb2',
-          600: '#275c97',
-          700: '#204c7d',
-          800: '#193b62',
-          900: '#122b47',
-          950: '#0c1b2d',
-        },
-        // Primitive colors
         emerald: {
           50: '#ecfdf5',
           100: '#d1fae5',
@@ -344,21 +340,6 @@ module.exports = {
           800: '#292524',
           900: '#1c1917',
           950: '#0c0a09',
-        },
-        // Surface colors for light mode
-        surface: {
-          0: '#ffffff',
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
         },
       },
       borderRadius: {

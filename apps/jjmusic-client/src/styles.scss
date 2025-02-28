@@ -42,6 +42,9 @@
   --form-field-padding-x: 0.75rem;
   --form-field-padding-y: 0.5rem;
   --form-field-border-radius: var(--border-radius-md);
+
+  --primary-color: #2e6cb2;
+  --primary-color-text: #ffffff;
 }
 
 // Light mode (default)
@@ -98,17 +101,9 @@
   --surface-900: #18181b;
   --surface-950: #09090b;
 
-  --contrast-200: #fde68a;
-  --contrast-300: #fcd34d;
-  --contrast-400: #fbbf24;
-  --contrast-500: #f59e0b;
-  --contrast-600: #d97706;
-  --contrast-700: #b45309;
-  --contrast-800: #92400e;
-
   // Primary colors
   --primary-color: var(--primary-400);
-  --primary-contrast-color: var(--contrast-400);
+  --primary-contrast-color: var(--surface-900);
   --primary-hover-color: var(--primary-300);
   --primary-active-color: var(--primary-200);
 
@@ -132,6 +127,11 @@
   --content-bg: var(--surface-900);
   --content-hover-bg: var(--surface-800);
   --content-border-color: var(--surface-700);
+}
+
+.dark {
+  --primary-color: #5688c1; // Lighter shade for dark mode
+  --primary-color-text: #ffffff;
 }
 
 // Custom utility classes
@@ -201,14 +201,13 @@
     }
 
     &.p-button-contrast {
-      background-color: var(--contrast-400);
-      color: var(--text-color);
-      border-color: var(--contrast-500);
+      background: var(--primary-color);
+      color: var(--primary-color-text);
+      border-color: var(--primary-color);
 
       &:enabled:hover {
-        background-color: var(--contrast-200);
-        color: var(--text-hover-color);
-        border-color: var(--contrast-300);
+        background: color-mix(in srgb, var(--primary-color) 80%, black);
+        border-color: color-mix(in srgb, var(--primary-color) 80%, black);
       }
     }
   }
