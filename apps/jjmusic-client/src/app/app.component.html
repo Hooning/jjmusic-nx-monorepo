@@ -51,25 +51,25 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-16 bg-stone-200 text-sky-900">
+    <section class="py-16 bg-stone-300 text-sky-900">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">
           Why Choose Our Piano Lessons?
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="p-6 rounded-lg shadow-md">
+          <div class="p-6 rounded-lg shadow-md bg-slate-100">
             <i class="fas fa-music text-4xl mb-4"></i>
             <h3 class="text-xl font-semibold mb-2">Expert Instructors</h3>
             <p>Learn from renowned jazz pianists and seasoned educators.</p>
           </div>
-          <div class="p-6 rounded-lg shadow-md">
+          <div class="p-6 rounded-lg shadow-md bg-slate-100">
             <i class="fas fa-clock text-4xlmb-4"></i>
             <h3 class="text-xl font-semibold mb-2">Flexible Schedule</h3>
             <p>
               Access lessons 24/7, fitting your practice around your lifestyle.
             </p>
           </div>
-          <div class="p-6 rounded-lg shadow-md">
+          <div class="p-6 rounded-lg shadow-md bg-slate-100">
             <i class="fas fa-chart-line text-4xl mb-4"></i>
             <h3 class="text-xl font-semibold mb-2">Track Your Progress</h3>
             <p>
@@ -86,9 +86,9 @@
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Popular Lessons</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="p-6 rounded-lg shadow-md">
+          <div class="p-6 rounded-lg shadow-md bg-stone-300 text-primary-700">
             <img
-              src="/placeholder.svg?height=200&width=300"
+              src="https://ce.harpercollege.edu/srs/upload/Music%20Jazz%20Fotolia_32533430_L.jpg"
               alt="Jazz Fundamentals"
               class="w-full h-40 object-cover rounded-md mb-4"
             />
@@ -96,11 +96,13 @@
             <p class="mb-4">
               Master the basics of jazz piano with our comprehensive course.
             </p>
-            <a href="#">Learn More →</a>
+            <a href="#" class="hover:text-purple-800 hover:font-semibold"
+              >Learn More →</a
+            >
           </div>
-          <div class="p-6 rounded-lg shadow-md">
+          <div class="p-6 rounded-lg shadow-md bg-stone-300 text-primary-700">
             <img
-              src="/placeholder.svg?height=200&width=300"
+              src="https://assets.technologynetworks.com/production/dynamic/images/content/326436/making-it-up-as-you-go-how-jazz-improvisation-affects-the-brain-326436-1280x720.webp?cb=10423382"
               alt="Improvisation Techniques"
               class="w-full h-40 object-cover rounded-md mb-4"
             />
@@ -108,24 +110,28 @@
             <p class="mb-4">
               Unlock your creativity with advanced improvisation methods.
             </p>
-            <a href="#" class="">Learn More →</a>
+            <a href="#" class="hover:text-purple-800 hover:font-semibold"
+              >Learn More →</a
+            >
           </div>
-          <div class="p-6 rounded-lg shadow-md">
+          <div class="p-6 rounded-lg shadow-md bg-stone-300 text-primary-700">
             <img
-              src="/placeholder.svg?height=200&width=300"
+              src="https://sandc.ae/wp-content/uploads/2019/08/Blues-pianist.jpg"
               alt="Blues Piano Mastery"
               class="w-full h-40 object-cover rounded-md mb-4"
             />
             <h3 class="text-xl font-semibold mb-2">Blues Piano Mastery</h3>
             <p class="mb-4">Dive deep into the soulful world of blues piano.</p>
-            <a href="#" class="">Learn More →</a>
+            <a href="#" class="hover:text-purple-800 hover:font-semibold"
+              >Learn More →</a
+            >
           </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonial Section -->
-    <section class="py-16 bg-amber-50">
+    <section class="py-16 bg-stone-300">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center mb-12 text-sky-950">
           What Our Students Say
@@ -160,12 +166,13 @@
         <p class="text-xl mb-8">
           Join thousands of students who are mastering jazz piano online.
         </p>
-        <a
-          href="#"
-          class="font-semibold py-3 px-6 rounded-lg transition-colors inline-block"
-        >
-          Get Started Now
-        </a>
+        <p-button
+          label="Get Started Now"
+          size="large"
+          [raised]="true"
+          [rounded]="true"
+          severity="success"
+        ></p-button>
       </div>
     </section>
   </main>
