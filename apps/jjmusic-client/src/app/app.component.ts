@@ -1,7 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 /** PrimeNG Modules */
 import { ButtonModule } from 'primeng/button';
@@ -18,17 +16,18 @@ import { MenuItem } from 'primeng/api';
     ButtonModule,
     MenubarModule,
     CardModule,
+    RouterOutlet,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular-layout';
   menuItems: MenuItem[] = [
     {
       label: 'Home',
       icon: 'pi pi-home',
+      routerLink: '/',
     },
     {
       label: 'Lessons',
@@ -41,18 +40,17 @@ export class AppComponent {
           label: 'Funk Piano',
         },
       ],
+      routerLink: '/lessons',
     },
     {
       label: 'Sheet Music',
       icon: 'pi pi-book',
-    },
-    {
-      label: 'About',
-      icon: 'pi pi-info-circle',
+      routerLink: '/sheet-music',
     },
     {
       label: 'Contact',
       icon: 'pi pi-envelope',
+      routerLink: '/contact-us',
     },
   ];
 }

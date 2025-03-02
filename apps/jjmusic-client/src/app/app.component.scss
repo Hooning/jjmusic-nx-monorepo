@@ -3,10 +3,11 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  @apply bg-sky-950 border-0 shadow-md;
 }
 
 :host ::ng-deep .p-menubar-root-list {
   margin-left: auto; /* This pushes the menu items to the right */
   display: flex;
-  gap: 1rem; /* This adds space between menu items */
+  gap: 0.5rem; /* This adds space between menu items */
 }
