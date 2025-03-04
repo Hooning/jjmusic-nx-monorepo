@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { PasswordModule } from 'primeng/password';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -21,6 +22,7 @@ import { PasswordModule } from 'primeng/password';
     ButtonModule,
     CheckboxModule,
     PasswordModule,
+    RouterModule,
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',

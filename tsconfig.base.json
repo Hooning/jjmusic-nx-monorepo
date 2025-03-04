@@ -41,6 +41,9 @@
       ],
       "@jjmusic-nx-monorepo/client/domain/home": [
         "libs/client/domain/home/src/index.ts"
+      ],
+      "@jjmusic-nx-monorepo/client/domain/auth/login": [
+        "libs/client/domain/auth/login/src/index.ts"
       ]
     }
   },

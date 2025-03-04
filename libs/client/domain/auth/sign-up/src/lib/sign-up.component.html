@@ -85,6 +85,7 @@
               formControlName="terms"
               [binary]="true"
               inputId="terms"
+              class="flex items-center"
             ></p-checkbox>
             <label for="terms" class="ml-2 block text-sm text-gray-700">
               <span class="font-medium">이용약관</span>에 동의합니다 (I agree to
@@ -97,6 +98,7 @@
               formControlName="privacy"
               [binary]="true"
               inputId="privacy"
+              class="flex items-center"
             ></p-checkbox>
             <label for="privacy" class="ml-2 block text-sm text-gray-700">
               <span class="font-medium">개인정보 처리방침</span>에 동의합니다 (I
@@ -109,6 +111,7 @@
               formControlName="analytics"
               [binary]="true"
               inputId="analytics"
+              class="flex items-center"
             ></p-checkbox>
             <label for="analytics" class="ml-2 block text-sm text-gray-700">
               웹 분석 및 개인화된 경험을 위한 데이터 수집에 동의합니다 (I agree
@@ -126,7 +129,12 @@
 
       <p class="text-center text-sm text-gray-500 mt-4">
         이미 계정이 있으신가요?
-        <a href="#" class="text-sky-600 hover:underline ml-1">로그인</a>
+        <a
+          href="#"
+          class="text-sky-600 hover:underline ml-1"
+          [routerLink]="['/log-in']"
+          >로그인</a
+        >
       </p>
     </div>
   </div>
