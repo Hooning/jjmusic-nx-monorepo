@@ -8,7 +8,11 @@ CREATE TYPE "Status" AS ENUM ('PENDING', 'COMPLETED', 'FAILED');
 CREATE TABLE "User" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "email" TEXT NOT NULL,
-    "password" TEXT NOT NULL,
+    "password" TEXT,
+    "googleId" TEXT,
+    "authProvider" TEXT NOT NULL DEFAULT 'local',
+    "username" TEXT,
+    "profilePicture" TEXT,
     "role" "Role" NOT NULL DEFAULT 'STUDENT',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
@@ -97,6 +101,9 @@ CREATE TABLE "Purchase" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_googleId_key" ON "User"("googleId");
 
 -- CreateIndex
 CREATE INDEX "User_email_idx" ON "User"("email");
