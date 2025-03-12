@@ -18,6 +18,80 @@
   @apply bg-white text-primary;
 }
 
+:host ::ng-deep .p-password-toggle-mask-icon {
+  @apply text-black;
+}
+
 :host ::ng-deep .submit-button {
   @apply bg-sky-900 text-white w-full mt-4;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.strength-meter {
+  margin-top: 10px;
+}
+
+.strength-meter-bar {
+  height: 5px;
+  background-color: #ddd;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.strength-meter-bar.weak {
+  background-color: #f44336;
+  width: 33%;
+}
+
+.strength-meter-bar.medium {
+  background-color: #ff9800;
+  width: 66%;
+}
+
+.strength-meter-bar.strong {
+  background-color: #4caf50;
+  width: 100%;
+}
+
+.strength-text {
+  font-size: 12px;
+}
+
+.strength-text.weak {
+  color: #f44336;
+}
+
+.strength-text.medium {
+  color: #ff9800;
+}
+
+.strength-text.strong {
+  color: #4caf50;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: #4caf50;
+  font-size: 12px;
+  margin-top: 5px;
 }

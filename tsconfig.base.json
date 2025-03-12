@@ -36,14 +36,17 @@
       "@jjmusic-nx-monorepo/api/domain/users": [
         "libs/api/domain/users/src/index.ts"
       ],
+      "@jjmusic-nx-monorepo/client/domain/auth/login": [
+        "libs/client/domain/auth/login/src/index.ts"
+      ],
       "@jjmusic-nx-monorepo/client/domain/auth/sign-up": [
         "libs/client/domain/auth/sign-up/src/index.ts"
       ],
       "@jjmusic-nx-monorepo/client/domain/home": [
         "libs/client/domain/home/src/index.ts"
       ],
-      "@jjmusic-nx-monorepo/client/domain/auth/login": [
-        "libs/client/domain/auth/login/src/index.ts"
+      "@jjmusic-nx-monorepo/client/shared/validators": [
+        "libs/client/shared/validators/src/index.ts"
       ]
     }
   },
