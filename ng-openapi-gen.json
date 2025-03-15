@@ -1,8 +1,8 @@
 {
   "input": "./openapi.json",
-  "output": "libs/jjmusic-client/shared/src/lib/api",
+  "output": "libs/client/shared/api-client/src/lib/api",
   "ignoreUnusedModels": false,
-  "templates": "./api-templates",
+  "templates": ".",
   "skipJsonSuffix": true,
   "includeTags": [],
   "excludeTags": [],

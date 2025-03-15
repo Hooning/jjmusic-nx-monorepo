@@ -45,8 +45,14 @@
       "@jjmusic-nx-monorepo/client/domain/home": [
         "libs/client/domain/home/src/index.ts"
       ],
+      "@jjmusic-nx-monorepo/client/shared/api-client": [
+        "libs/client/shared/api-client/src/index.ts"
+      ],
       "@jjmusic-nx-monorepo/client/shared/validators": [
         "libs/client/shared/validators/src/index.ts"
+      ],
+      "@jjmusic-nx-monorepo/shared/data-access": [
+        "libs/shared/data-access/src/index.ts"
       ]
     }
   },
