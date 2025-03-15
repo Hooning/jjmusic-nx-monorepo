@@ -20,8 +20,24 @@ model User {
   purchases      Purchase[]
   createdAt      DateTime   @default(now())
   updatedAt      DateTime   @updatedAt
+  consents    UserConsent[]
 
   @@index([email])
+}
+
+model UserConsent {
+  id               String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId           String   @db.Uuid
+  user             User     @relation(fields: [userId], references: [id])
+  consentType      String   // "terms", "privacy", "analytics"
+  consentVersion   String   // Version of the terms/policy accepted
+  ipAddress        String?  // Optional for evidence of consent
+  consented        Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([userId, consentType])
+  @@index([userId])
 }
 
 model Lesson {
