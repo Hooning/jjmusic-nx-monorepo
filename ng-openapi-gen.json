@@ -2,7 +2,7 @@
   "input": "./openapi.json",
   "output": "libs/client/shared/api-client/src/lib/api",
   "ignoreUnusedModels": false,
-  "templates": ".",
+  "templates": null,
   "skipJsonSuffix": true,
   "includeTags": [],
   "excludeTags": [],
