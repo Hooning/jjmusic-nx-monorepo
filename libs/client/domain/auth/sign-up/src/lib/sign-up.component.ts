@@ -54,23 +54,15 @@ export class SignUpComponent implements OnInit {
             }),
           ],
         ],
-        terms: [false, [Validators.required]],
-        privacy: [false, [Validators.required]],
+        terms: [false, [Validators.required, Validators.requiredTrue]],
+        privacy: [false, [Validators.required, Validators.requiredTrue]],
         analytics: [false],
-        confirmPassword: ['', Validators.required],
+        confirmPassword: ['', [Validators.required]],
       },
       {
-        validators: this.passwordMatchValidator,
+        validators: PasswordValidators.matchPassword(),
       },
     );
-  }
-
-  // Additional validator to check if passwords match
-  passwordMatchValidator(group: FormGroup) {
-    const password = group.get('password')?.value;
-    const confirmPassword = group.get('confirmPassword')?.value;
-
-    return password === confirmPassword ? null : { passwordMismatch: true };
   }
 
   // Helper method to get password error message
@@ -82,7 +74,22 @@ export class SignUpComponent implements OnInit {
     return [];
   }
 
+  // Method to check if passwords match
+  hasPasswordMismatchError(): boolean {
+    const confirmPasswordControl = this.signUpForm.get('confirmPassword');
+    if (!confirmPasswordControl) {
+      return false;
+    }
+    return (
+      confirmPasswordControl.dirty &&
+      confirmPasswordControl.hasError('passwordMismatch')
+    );
+  }
+
   onSubmit(): void {
+    console.debug('Form submitted');
+    console.log('form valid: ', this.signUpForm.valid);
+    console.log('form value: ', this.signUpForm.value);
     if (this.signUpForm.valid) {
       // Handle form submission
       console.log(this.signUpForm.value);

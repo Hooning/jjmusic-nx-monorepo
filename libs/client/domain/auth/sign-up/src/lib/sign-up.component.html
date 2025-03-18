@@ -73,6 +73,18 @@
             inputStyleClass="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300"
             placeholder="••••••••"
           ></p-password>
+          <label for="password" class="block text-sm font-medium text-gray-700"
+            >비밀번호 확인</label
+          >
+          <p-password
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            [feedback]="false"
+            [toggleMask]="true"
+            styleClass="w-full"
+            inputStyleClass="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-300"
+            placeholder="••••••••"
+          ></p-password>
           <!-- Password strength indicator -->
           <div class="strength-meter" *ngIf="signUpForm.get('password')?.value">
             <div
@@ -132,10 +144,16 @@
               }
             </p>
             <p
-              *ngIf="signUpForm.get('password')?.valid"
+              *ngIf="
+                signUpForm.get('password')?.valid &&
+                signUpForm.get('confirmPassword')?.valid
+              "
               class="success-message"
             >
               비밀번호 요구 사항을 충족했습니다!
+            </p>
+            <p class="error-message" *ngIf="hasPasswordMismatchError()">
+              비밀번호가 일치하지 않습니다.
             </p>
           </div>
         </div>
@@ -180,11 +198,11 @@
             </label>
           </div>
         </div>
-
         <p-button
           type="submit"
           label="계정 만들기"
           styleClass="submit-button"
+          [disabled]="!this.signUpForm.valid"
         ></p-button>
       </form>
 

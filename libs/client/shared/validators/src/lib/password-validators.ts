@@ -1,4 +1,9 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import {
+  AbstractControl,
+  FormGroup,
+  ValidationErrors,
+  ValidatorFn,
+} from '@angular/forms';
 
 export class PasswordValidators {
   /**
@@ -116,6 +121,56 @@ export class PasswordValidators {
       }
 
       return Object.keys(errors).length > 0 ? errors : null;
+    };
+  }
+
+  /**
+   * Validates that confirmPassword matches password
+   * @param passwordControlName The name of the password control to compare against
+   * @param confirmPasswordControlName The name of the confirm password control
+   * @returns ValidatorFn that checks if password and confirmPassword match
+   */
+  static matchPassword(
+    passwordControlName = 'password',
+    confirmPasswordControlName = 'confirmPassword',
+  ): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      if (!(control instanceof FormGroup)) {
+        return null;
+      }
+
+      const passwordControl = control.get(passwordControlName);
+      const confirmPasswordControl = control.get(confirmPasswordControlName);
+
+      if (!passwordControl || !confirmPasswordControl) {
+        return null;
+      }
+
+      // Don't validate if confirmPassword is empty or if password field has validation errors
+      if (!confirmPasswordControl.value || passwordControl.errors) {
+        return null;
+      }
+
+      // If passwords don't match, set error on confirmPassword control
+      if (passwordControl.value !== confirmPasswordControl.value) {
+        const error = { passwordMismatch: true };
+        confirmPasswordControl.setErrors(error);
+        return error;
+      }
+
+      // Reset error if it was previously set and passwords now match
+      if (confirmPasswordControl.errors?.['passwordMismatch']) {
+        // Create a copy of current errors without the passwordMismatch error
+        const errors = { ...confirmPasswordControl.errors };
+        delete errors['passwordMismatch'];
+
+        // Set null or remaining errors
+        confirmPasswordControl.setErrors(
+          Object.keys(errors).length > 0 ? errors : null,
+        );
+      }
+
+      return null;
     };
   }
 
