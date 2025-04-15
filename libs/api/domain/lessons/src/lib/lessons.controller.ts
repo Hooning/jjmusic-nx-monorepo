@@ -25,7 +25,7 @@ import { LessonsService } from './lessons.service';
 // import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 // import { RolesGuard } from '../auth/guards/roles.guard';
 // import { Roles } from '../auth/decorators/roles.decorator';
-import { Role } from '@prisma/client/jjmusic-db-client';
+import { Role } from '@prisma/client';
 // import { PaginationDto } from '../common/dto/pagination.dto';
 // import { LessonCategoriesDto } from './dto/lesson-categories.dto';
 

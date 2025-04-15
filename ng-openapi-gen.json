@@ -11,5 +11,10 @@
   "modelPrefix": "",
   "modelSuffix": "",
   "enumPrefix": "",
-  "enumSuffix": "Enum"
+  "enumSuffix": "Enum",
+  "module": "ApiModule",
+  "supportsES6": true,
+  "stringEnums": false,
+  "responseTypeSuffix": "Response",
+  "httpMethodStyle": "full"
 }

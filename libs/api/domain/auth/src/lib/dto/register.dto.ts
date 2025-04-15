@@ -2,12 +2,13 @@ import { RegisterDto as IRegisterDto } from '@jjmusic-nx-monorepo/shared/data-ac
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsString, IsBoolean, MinLength } from 'class-validator';
 
-export class RegisterDto implements IRegisterDto {
+export class RegisterDto {
   @ApiProperty({
     example: 'user@example.com',
     description: 'The email of the user',
   })
   @IsEmail()
+  @IsString()
   email!: string;
 
   @ApiProperty({

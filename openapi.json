@@ -14,6 +14,42 @@
           "App"
         ]
       }
+    },
+    "/auth/register": {
+      "post": {
+        "operationId": "AuthController_register",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "description": "User registration details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User registered successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "summary": "Register a new user",
+        "tags": [
+          "auth"
+        ]
+      }
     }
   },
   "info": {
@@ -25,6 +61,85 @@
   "tags": [],
   "servers": [],
   "components": {
-    "schemas": {}
+    "schemas": {
+      "RegisterDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "user@example.com",
+            "description": "The email of the user"
+          },
+          "password": {
+            "type": "string",
+            "example": "password123",
+            "description": "The password of the user"
+          },
+          "username": {
+            "type": "string",
+            "example": "user123",
+            "description": "The username of the user"
+          },
+          "termsAccepted": {
+            "type": "boolean",
+            "example": true,
+            "description": "Whether the user has accepted the terms of service"
+          },
+          "privacyPolicyAccepted": {
+            "type": "boolean",
+            "example": true,
+            "description": "Whether the user has accepted the privacy policy"
+          },
+          "analyticsConsent": {
+            "type": "boolean",
+            "example": false,
+            "description": "Whether the user has accepted analytics tracking"
+          }
+        },
+        "required": [
+          "email",
+          "password",
+          "username",
+          "termsAccepted",
+          "privacyPolicyAccepted",
+          "analyticsConsent"
+        ]
+      },
+      "AuthResponseDto": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true,
+            "description": "Indicates whether the request was successful"
+          },
+          "message": {
+            "type": "string",
+            "example": "User registered successfully",
+            "description": "The message returned to the user"
+          },
+          "userId": {
+            "type": "string",
+            "example": "user123",
+            "description": "The ID of the user"
+          },
+          "token": {
+            "type": "string",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMTIzIiwiaWF0IjoxNjI5MDQ3Njg0LCJleHAiOjE2MjkwNDc2ODV9.1JXg1yRv7L8ZK8f3q8Z1s9K3zv0z3J1v9jz9J1z3J1",
+            "description": "The JWT token for the user"
+          },
+          "expiresIn": {
+            "type": "number",
+            "example": 3600,
+            "description": "The time in seconds until the token expires"
+          }
+        },
+        "required": [
+          "success",
+          "message",
+          "userId"
+        ]
+      }
+    }
   }
 }

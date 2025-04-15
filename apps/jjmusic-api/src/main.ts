@@ -17,11 +17,15 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
 
-  // Save the OpenAPI spec to a file
-  const outputPath = path.resolve(process.cwd(), 'openapi.json');
-  fs.writeFileSync(outputPath, JSON.stringify(document, null, 2), {
-    encoding: 'utf8',
-  });
+  try {
+    const outputPath = path.resolve(process.cwd(), 'openapi.json');
+    fs.writeFileSync(outputPath, JSON.stringify(document, null, 2), {
+      encoding: 'utf8',
+    });
+    Logger.log(`OpenAPI spec saved to ${outputPath}`, 'OpenAPI');
+  } catch (error) {
+    Logger.error(`Failed to save OpenAPI spec: ${error.message}`, 'OpenAPI');
+  }
 
   // Serve Swagger UI
   SwaggerModule.setup('api', app, document);

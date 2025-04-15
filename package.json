@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "postinstall": "prisma generate --schema=libs/api/configuration/jjmusic-prisma-schema/prisma/schema.prisma",
     "start:api": "nx serve jjmusic-api",
     "start:web": "nx serve jjmusic-client",
     "gen:api-client": "ng-openapi-gen --config ng-openapi-gen.json",
     "gen:api": "npm run start:api && npm run gen:api-client",
-    "prisma:migrate:dev": "npx prisma migrate dev --name"
+    "prisma:migrate:dev": "npx prisma migrate dev --name",
+    "prisma:generate": "npx prisma generate"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +31,7 @@
     "@prisma/client": "^6.4.1",
     "@types/bcrypt": "^5.0.2",
     "axios": "^1.6.0",
+    "bcrypt": "^5.1.1",
     "class-validator": "^0.14.1",
     "primeicons": "^7.0.0",
     "primeng": "^19.0.6",

@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@jjmusic-nx-monorepo/api/configuration/jjmusic-prisma-schema": [
-        "libs/api/configuration/jjmusic-prisma-schema/src/index.ts"
+        "libs/api/configuration/jjmusic-prisma-schema/prisma/src/index.ts"
       ],
       "@jjmusic-nx-monorepo/api/domain/auth": [
         "libs/api/domain/auth/src/index.ts"

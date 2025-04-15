@@ -4,15 +4,15 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 
-import { PrismaClient } from '@prisma/client';
 import { RegisterDto } from './dto/register.dto';
 import { AuthResponseDto } from './dto/auth-response.dto';
 import { hash } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
+import { PrismaService } from '@jjmusic-nx-monorepo/api/configuration/jjmusic-prisma-schema';
 
 @Injectable()
 export class AuthService {
-  constructor(private prisma: PrismaClient, private jwtService: JwtService) {}
+  constructor(private prisma: PrismaService, private jwtService: JwtService) {}
 
   async register(registerDto: RegisterDto): Promise<AuthResponseDto> {
     const {

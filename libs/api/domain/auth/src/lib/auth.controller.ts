@@ -10,6 +10,7 @@ import {
   ApiTags,
   ApiOperation,
   ApiResponse,
+  ApiBody,
   // ApiBearerAuth,
 } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
@@ -26,6 +27,7 @@ export class AuthController {
 
   @Post('register')
   @ApiOperation({ summary: 'Register a new user' })
+  @ApiBody({ type: RegisterDto, description: 'User registration details' })
   @ApiResponse({
     status: 201,
     description: 'User registered successfully',
